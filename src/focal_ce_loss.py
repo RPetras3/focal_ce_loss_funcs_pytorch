@@ -51,11 +51,11 @@ class BFCELoss(nn.Module):
 
         Args:
             y_pred (torch.Tensor): Predicted probabilities with values in [0, 1].
-            y_true (torch.Tensor): Ground-truth binary labels (0 or 1), with the
-                same shape as ``y_pred``.
+            y_true (torch.Tensor): Ground-truth binary labels (0 or 1), with a
+                matching shape to ``y_pred``.
 
         Returns:
-            torch.Tensor: The computed focal loss. If ``gamma`` is 0, returns the
+            torch.Tensor: The computed binary focal loss. If ``gamma`` is 0, returns the
                 standard binary cross-entropy loss.
         """
         ce_base = nn.BCELoss(reduction=self.reduction,
@@ -131,12 +131,12 @@ class FocalCELoss(nn.Module):
 
         Args:
             y_pred (torch.Tensor): Predicted probabilities with values in [0, 1].
-            y_true (torch.Tensor): Ground-truth binary labels (0 or 1), with the
-                same shape as ``y_pred``.
+            y_true (torch.Tensor): Ground-truth labels, with a matching shape to
+                ``y_pred``.
 
         Returns:
             torch.Tensor: The computed focal loss. If ``gamma`` is 0, returns the
-                standard binary cross-entropy loss.
+                standard cross-entropy loss.
         """
         ce_base = nn.CrossEntropyLoss(reduction=self.reduction,
                                       weight=self.weight,
