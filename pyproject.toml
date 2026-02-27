@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "focal_ce_loss"
-version = "0.0.1"
+version = "0.0.2"
 description = "A loss function for "
 authors = ["rpetras ricky@petras.us"]
 readme = "src/FCE_README.md"

@@ -63,7 +63,7 @@ jobs:
         echo "Package version: $PACKAGE_VERSION"
 
         # Fail the workflow if versions don't match
-        if [ "$TAG_VERSION" != "$PACKAGE_VERSION" ]; then
+        if [[ "$TAG_VERSION" != "$PACKAGE_VERSION" ]]; then
           echo "Error: Release tag version ($TAG_VERSION) does not match package version ($PACKAGE_VERSION)"
           exit 1
         fi
