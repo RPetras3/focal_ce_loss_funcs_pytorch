@@ -13,7 +13,7 @@ pip install focal_ce_loss_funcs_pytorch
 ```python
 from focal_ce_loss import FocalCELoss
 
-criterion = FocalCrossEntropyLoss()
+criterion = FocalCELoss()
 loss = criterion(inputs, targets)
 ```
 ### FocalCELoss
@@ -32,7 +32,7 @@ loss.backward()
 
 **Parameters**
 - `gamma`: focusing parameter; higher values down-weight easy examples more aggressively (default: `2.0`)
-- `alpha`: optional class weight tensor of shape `(C,)` for additional class balancing (default: `0.25`)
+- `alpha`: optional class weight for additional class balancing (default: `0.25`)
 - `reduction`: specifies the reduction to apply — `"mean"`, `"sum"`, or `"none"` (default: `"sum"`)
 - `ignore_index`: target value to ignore during loss computation (default: `-100`)
 
@@ -52,7 +52,7 @@ from focal_ce_loss import FocalCELoss
 inputs  = torch.randn(8, 10)          # batch of 8, 10 classes
 targets = torch.randint(0, 10, (8,))  # ground-truth labels
 
-criterion = FocalCrossEntropyLoss(gamma=2.0)
+criterion = FocalCELoss(gamma=2.0)
 loss = criterion(inputs, targets)
 loss.backward()
 ```
@@ -73,7 +73,7 @@ loss.backward()
 
 **Parameters**
 - `gamma`: focusing parameter; higher values down-weight easy examples more aggressively (default: `2.0`)
-- `alpha`: optional scalar weight for the positive class (default: `0.25`)
+- `alpha`: optional class weight for the positive class (default: `0.25`)
 - `reduction`: specifies the reduction to apply — `"mean"`, `"sum"`, or `"none"` (default: `"mean"`)
 - `ignore_index`: target value to ignore during loss computation (default: `-100`)
 
