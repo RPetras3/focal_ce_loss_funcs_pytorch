@@ -1,8 +1,8 @@
-# Simple Python package
+# Focal Cross Entropy package
 
-[![Publish to PyPI](https://github.com/gperdrizet/simple-python-package/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/gperdrizet/simple-python-package/actions/workflows/publish-to-pypi.yml)
+[![Publish to PyPI](https://github.com/RPetras3/focal_ce_loss_funcs_pytorch/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/RPetras3/focal_ce_loss_funcs_pytorch/actions/workflows/publish-to-pypi.yml)
 
-This repository is a minimal template for publishing a small Python package to PyPI using GitHub Actions and trusted publishing.
+This repository is an implementation of the Focal Crossentropy loss function that is meant to be used as a Pytorch compatible loss function using nn.Module
 
 ## Quick start
 
@@ -29,63 +29,37 @@ This repository is a minimal template for publishing a small Python package to P
 ├── README.md                    # Project overview and setup instructions
 ├── requirements.txt             # Dev/test dependencies for local usage
 ├── notebooks/
-│   └── lorenz_demo.ipynb        # Example notebook demonstrating the package
+│   └── focal_cross_entropy_demo.ipynb        # Example notebook demonstrating the package
 └── src/
-	└── lorenz.py                # Example module shipped in the package
+	└── focal_ce_loss.py                # Example module shipped in the package
 ```
 ## Usage
 
-### 1. Fork and mark as template (once)
+### 1. Fork and clone the repo (once)
 
-1. Fork this repository.
-2. In the fork, open **Settings → General → Template repository** and enable it.
+Fork the repo on GitHub and clone it to your local machine:
 
-### 2. Try or remove the demo (once)
-
-This repository ships a tiny demo package (`lorenz`) used to illustrate packaging and publishing. You can try it locally or remove it before starting your own project.
-
-#### 2.1. Try the demo locally
-
-
-1. Open your fork in a devcontainer or GitHub Codespace.
-2. Install the package in editable mode:
-	```text
-	pip install -e .
-	```
-
-3. Run the demo notebook [notebooks/lorenz_demo.ipynb](notebooks/lorenz_demo.ipynb)
-
-#### 2.2. Install the demo from PyPI
-
-Since the demo package has been published to PyPI from this repo, you can install it via pip and use it anywhere:
-
-```text
-pip install lorenz
+```bash
+git clone https://github.com/<your_user_name>/focal_ce_loss_funcs_pytorch.git
 ```
 
-#### 2.3. Remove the demo from your fork
+### 2. Run the demo files to download the dataset and look at the example notebook.
 
-If you want a clean template fork to start new projects, simply delete the demo files:
-- `src/lorenz.py`
-- `notebooks/lorenz_demo.ipynb`
+Open `notebooks/focal_cross_entropy_demo.ipynb` and run the cells to see an example of how the loss function compares to other inbuilt loss functions in pytorch.
 
+### 3. Make any changes you wish to the codebase, and commit and push those changes to GitHub.
 
-### 3. Create a pending publisher on PyPI (each new project)
+```bash
+git add .
+git commit -m "Your commit message here"
+git push origin main
+```
 
-1. In PyPI, go to **Project → Publishing → Trusted Publishers**.
-2. Add a pending publisher with these values:
-	- **PyPI Project Name**: must be unique, site-wide
-	- **Owner**: your GitHub user or org
-	- **Repository**: your repo name
-	- **Workflow**: `publish-to-pypi.yml`
-	- **Environment**: `pypi`
+### 4. (Optional) Create a pull request to the original repo if you think your changes would be useful to others.
 
-Do this first, before naming the GitHub repository to determine if your planned name is available on PyPI. PyPI project names must be unique site-wide. The GitHub repo and PyPI project names don't have to match, but it's nice if they do.
-
-### 4. Create a new repository from your template (each new project)
-
-1. In your template fork, click **Use this template** on GitHub.
-2. Create a new repository for your project.
+On GitHub, navigate to your forked repo and click the "Compare & pull request" button.
+- Follow the prompts to create a pull request against the original repository.
+- The maintainers of the original repo will review your changes.
 
 ### 5. Update project metadata (each new project)
 
